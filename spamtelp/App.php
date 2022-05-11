@@ -20,5 +20,5 @@ for ($i = 0; $i < $jm; $i++){
 
         $server_output = curl_exec ($ch);
         curl_close ($ch);
-        echo "sukses"."\n";
+        echo $server_output."\n";
 }
